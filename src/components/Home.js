@@ -23,7 +23,7 @@ export default function Home() {
 
 
             <ul>
-              <li><a href="/"><strong>InterviewBro</strong></a></li>
+              <li><a href="/"><strong>InterviewBro1</strong></a></li>
             </ul>
             <ul>
               <li><a href="#">Javascript</a></li>
