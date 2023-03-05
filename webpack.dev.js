@@ -28,6 +28,9 @@ module.exports = (env)=>{
       ]
     },
     devtool: "source-map",
+    devServer: {
+      historyApiFallback: true,
+    },
     stats: {
       preset: "minimal",
       assets: false,
