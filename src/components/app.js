@@ -4,16 +4,24 @@ import {
     RouterProvider,
   } from "react-router-dom";
 
+import ErrorPage from "./error";
 import Home from './home';
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Home/>,
+        errorElement: <ErrorPage />,
     },
     {
-        path: "home",
+        path: "javascript",
         element: <Home/>,
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "golang",
+        element: <Home/>,
+        errorElement: <ErrorPage />,
     },
 ]);
 
