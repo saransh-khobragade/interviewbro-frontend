@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.21.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom":"^6.8.2"
+    "react-dom": "^18.2.0"
   },
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open --port 3000",
