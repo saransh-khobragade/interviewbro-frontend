@@ -4,9 +4,9 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
-import ErrorPage from "./error";
-import Home from './home';
-import Accordian from './accordian';
+import ErrorPage from "./error.js";
+import Home from './home.js';
+import Accordian from './accordian.js';
 
 const router = createBrowserRouter([
     {
