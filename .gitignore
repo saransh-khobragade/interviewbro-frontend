@@ -3,3 +3,4 @@ public
 dist
 .env
 package-lock.json
+.DS_Store
