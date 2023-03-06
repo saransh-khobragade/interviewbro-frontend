@@ -6,16 +6,14 @@ export default function Accordian() {
 
     const [data, setData] = useState([])
 
-    const filterBySearch = (event) => {
-        // Access input value
+    const filterBySearch = async (event) => {        
         const query = event.target.value;
-        // Create copy of item list
-        var updatedList = [...data];
-        // Include all elements which includes the search query
+        const response = await axios.get(process.env.backendUrl)
+
+        let updatedList = [...response.data.question];
         updatedList = updatedList.filter((item) => {
           return item.question.toLowerCase().indexOf(query.toLowerCase()) !== -1;
         });
-        // Trigger render with updated values
         setData(updatedList);
     }
 
