@@ -4,26 +4,6 @@ import { CopyBlock, ocean } from "react-code-blocks";
 
 export default function Blog() {
 
-    const [data, setData] = useState([])
-
-    const filterBySearch = async (event) => {
-        const query = event.target.value;
-        const response = await axios.get(process.env.backendUrl)
-
-        let updatedList = [...response.data.question];
-        updatedList = updatedList.filter((item) => {
-            return item.question.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-        });
-        setData(updatedList);
-    }
-
-    useEffect(() => {
-        (async () => {
-            const response = await axios.get(process.env.backendUrl)
-            setData(response.data.question)
-        })()
-    }, [])
-
     let code = `                                                                                      
     num = 11
     if num > 1:
@@ -38,7 +18,7 @@ export default function Blog() {
     `;
     for(let i=0;i<220;i++){ code +=" ";}
     
-    const language = "javascript"
+    const language = "python"
     const showLineNumbers = true
 
     return (

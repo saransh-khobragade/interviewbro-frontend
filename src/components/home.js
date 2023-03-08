@@ -14,9 +14,9 @@ const Home = () => {
             <ul>
               <li><Link to={`questions/javascript`}>Javascript</Link></li>
               <li><Link to={`questions/golang`}>Golang</Link></li>
-              <li><a href="#">Datastructures</a></li>
+              <li><Link to={`blog`}>Datastructures</Link></li>
               <li><a href="#">SystemDesign</a></li>
-              <li><a href="#">Projects</a></li>
+              <li><a href="">Projects</a></li>
             </ul>
           </nav>
         </figure>
