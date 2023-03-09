@@ -27,7 +27,7 @@ export default function Accordian() {
     return (
         <div>
             <main className="container">
-                <input onChange={filterBySearch} style={{ "height": "10%", width: "100%" }} type="text" id="firstname" name="firstname" placeholder="Search" required />
+                <input onChange={filterBySearch} style={{ "height": "5%", width: "100%" }} type="text" id="firstname" name="firstname" placeholder="Search" required />
             </main>
 
             <main className="container">

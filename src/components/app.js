@@ -8,6 +8,7 @@ import ErrorPage from "./error.js";
 import Home from './home.js';
 import Accordian from './accordian.js';
 import Blog from './blog.js';
+import BlogList from './blog-list'
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
                 element: <Accordian />,
             },
             {
-                path: "blog",
+                path: "datastructure",
+                element: <BlogList/>,
+            },
+            {
+                path: "datastructure/:topic",
                 element: <Blog/>,
             },
         ],
