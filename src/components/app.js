@@ -6,9 +6,9 @@ import {
 
 import ErrorPage from "./error.js";
 import Home from './home.js';
-import Accordian from './accordian.js';
-import Blog from './blog.js';
-import BlogList from './blog-list'
+import Accordian from './accordian/accordian.js';
+import Blog from './blog/blog.js';
+import BlogList from './blog/blog-list'
 
 const router = createBrowserRouter([
     {
