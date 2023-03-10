@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
-
+import React, { useState,useContext,useEffect } from 'react';
+import { Context } from '../app'
 
 export default function Accordian() {
 
-    const [data, setData] = useState([])
+    const blogList = useContext(Context);
 
     const filterBySearch = async (event) => {        
         const query = event.target.value;
@@ -17,13 +16,6 @@ export default function Accordian() {
         setData(updatedList);
     }
 
-    useEffect(() => {
-        (async () => {
-            const response = await axios.get(process.env.backendUrl)
-            setData(response.data.question)
-        })()
-    }, [])
-
     return (
         <div>
             <main className="container">
@@ -31,10 +23,10 @@ export default function Accordian() {
             </main>
 
             <main className="container">
-                {data.length?data.map(x => {
+                {blogList.length?blogList.map(x => {
                     return <details key={x.id}>
-                        <summary>{x.question}</summary>
-                        <p>{x.shortanswer}</p>
+                        <summary>{x.blogTitle}</summary>
+                        <p>{x.blogShortanwer}</p>
                     </details>
                 }):null}
             </main>

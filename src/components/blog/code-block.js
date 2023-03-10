@@ -1,23 +1,16 @@
 import React from 'react';
-import { CopyBlock, ocean } from "react-code-blocks";
+import Gist from "react-gist";
 
 export default function CodeBlock(props) {
-  
-  const language = "python"
-  const showLineNumbers = true
-  let code = props.data
-  for(let i=0;i<220;i++){ code +=" ";}
+
+  const gistData = {
+    id: props.data,
+    file: null
+  };
 
   return (
     <div className="container" >
-      <CopyBlock
-        text={code}
-        language={language}
-        showLineNumbers={showLineNumbers}
-        theme={ocean}
-        wrapLines={true}
-        codeBlock
-      />
+      <Gist id={gistData.id} />
     </div>
   );
 }

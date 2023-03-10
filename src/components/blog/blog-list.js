@@ -10,8 +10,8 @@ export default function BlogList(props) {
     <table>
       <tbody>
         {
-          blogList.map(x=>{
-            return <tr key={x.blogId}>
+          blogList.map((x,i)=>{
+            return <tr key={i}>
             <td><Link to={x.blogId}>{x.blogTitle}</Link></td>
           </tr>
           })
