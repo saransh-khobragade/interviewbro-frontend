@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
+import React, { useContext } from 'react';
+import { Context } from '../app'
+import { useParams } from "react-router-dom";
 
 import List from './list'
 import Paragraph from './paragraph'
@@ -10,26 +11,12 @@ import SubHeading from './sub-heading';
 
 export default function Blog() {
 
-    const data = [
-        { "type":"heading","data": "How to host your website into AWS" },
-        { "type":"image","data": "https://i.postimg.cc/nLWGMXBV/Screenshot-2023-02-04-at-9-17-05-AM.png" },
-        { "type":"subheading","data": "Build your website" },
-        { "type":"paragraph","data": "abskdhjanlnasndlandlaslndkandlknalsndlansdlknaskldnalksndlandjalsnoahckanbhahnsdoahsabskdhjanlnasndlandlaslndkandlknalsndlansdlknaskldnalksndlandjalsnoahckanbhahnsdoahsabskdhjanlnasndlandlaslndkandlknalsndlansdlknaskldnalksndlandjalsnoahckanbhahnsdoahsabskdhjanlnasndlandlaslndkandlknalsndlansdlknaskldnalksndlandjalsnoahckanbhahnsdoahsabskdhjanlnasndlandlaslndkandlknalsndlansdlknaskldnalksndlandjalsnoahckanbhahnsdoahsabskdhjanlnasndlandlaslndkandlknalsndlansdlknaskldnalksndlandjalsnoahckanbhahnsdoahs" },
-        { "type":"list","data": ["first", "second", "third"] },
-        {"type":"code",
-            "data": `                                                                                      
-        num = 11
-        if num > 1:
-            for i in range(2, int(num/2)+1):
-                if (num % i) == 0:
-                    print(num, "is not a prime number")
-                    break
-            else:
-                print(num, "is a prime number")
-        else:
-            print(num, "is not a prime number")
-        `}
-    ]
+    let { blogId } = useParams();
+
+    const blogList = useContext(Context);
+    blogList.filter(x=>x.blogId===blogId)
+    
+    const data = blogList[0].blogContent
 
     return (
         <div>

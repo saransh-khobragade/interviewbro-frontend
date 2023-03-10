@@ -1,27 +1,21 @@
-import React from 'react';
+import React,{ useContext } from 'react';
 import { Link } from "react-router-dom";
+import { Context } from '../app'
 
 export default function BlogList(props) {
-
+  
+  const blogList = useContext(Context);
+  
   return (
     <table>
-      
       <tbody>
-        <tr>
-          <td><Link to={`what-is-javascript`}>what is javascript</Link></td>
-        </tr>
-        <tr>
-        <td><Link to={`what-is-javascript`}>what is javascript</Link></td>
-        </tr>
-        <tr>
-        <td><Link to={`what-is-javascript`}>what is javascript</Link></td>
-        </tr>
-        <tr>
-        <td><Link to={`what-is-javascript`}>what is javascript</Link></td>
-        </tr>
-        <tr>
-        <td><Link to={`what-is-javascript`}>what is javascript</Link></td>
-        </tr>
+        {
+          blogList.map(x=>{
+            return <tr key={x.blogId}>
+            <td><Link to={x.blogId}>{x.blogTitle}</Link></td>
+          </tr>
+          })
+        }
       </tbody>
     </table>
   );
