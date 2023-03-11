@@ -35,15 +35,15 @@ const App = () => {
                     element: <Accordian />,
                 },
                 {
-                    path: "questions/:topic",
+                    path: "questions/:catgory",
                     element: <Accordian />,
                 },
                 {
-                    path: "datastructure",
+                    path: "blogs/:category",
                     element:<BlogList />
                 },
                 {
-                    path: "datastructure/:blogId",
+                    path: "blog/:blogId",
                     element: <Blog/>,
                 },
             ],

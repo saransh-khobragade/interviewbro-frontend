@@ -1,17 +1,28 @@
-import React, { useState,useContext,useEffect } from 'react';
+import React, { useContext } from 'react';
+import { useParams } from "react-router-dom";
 import { Context } from '../app'
 
 export default function Accordian() {
 
-    const blogList = useContext(Context);
+    let blogList = useContext(Context);
+    let { category } = useParams();
+    category = category || 'javascript'
 
-    const filterBySearch = async (event) => {        
+    blogList = blogList.filter(x => {
+        if (x.blogCategory === category) {
+            return true
+        } else {
+            return false
+        }
+    })
+
+    const filterBySearch = async (event) => {
         const query = event.target.value;
         const response = await axios.get(process.env.backendUrl)
 
         let updatedList = [...response.data.question];
         updatedList = updatedList.filter((item) => {
-          return item.question.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+            return item.question.toLowerCase().indexOf(query.toLowerCase()) !== -1;
         });
         setData(updatedList);
     }
@@ -23,12 +34,12 @@ export default function Accordian() {
             </main>
 
             <main className="container">
-                {blogList.length?blogList.map(x => {
+                {blogList.length ? blogList.map(x => {
                     return <details key={x.id}>
                         <summary>{x.blogTitle}</summary>
                         <p>{x.blogShortanwer}</p>
                     </details>
-                }):null}
+                }) : null}
             </main>
         </div>
     );

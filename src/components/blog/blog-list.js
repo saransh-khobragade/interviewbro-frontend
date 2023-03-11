@@ -1,10 +1,19 @@
 import React,{ useContext } from 'react';
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
 import { Context } from '../app'
 
 export default function BlogList(props) {
   
-  const blogList = useContext(Context);
+  let blogList = useContext(Context);
+  const { category } = useParams();
+
+  blogList = blogList.filter(x=>{
+    if(x.blogCategory===category){
+      return true
+    }else{
+      return false
+    }
+  })
   
   return (
     <table>
@@ -12,7 +21,7 @@ export default function BlogList(props) {
         {
           blogList.map((x,i)=>{
             return <tr key={i}>
-            <td><Link to={x.blogId}>{x.blogTitle}</Link></td>
+            <td><Link to={`../../blog/${x.blogId}`} relative="path">{x.blogTitle}</Link></td>
           </tr>
           })
         }
