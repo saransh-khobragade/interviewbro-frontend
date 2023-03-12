@@ -35,7 +35,7 @@ const App = () => {
                     element: <Accordian />,
                 },
                 {
-                    path: "questions/:catgory",
+                    path: "questions/:category",
                     element: <Accordian />,
                 },
                 {
