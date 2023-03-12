@@ -20,7 +20,7 @@ const App = () => {
     useEffect(() => {
         (async () => {
             const response = await axios.get(process.env.backendUrl)
-            setData(response.data.blog)
+            setData(response.data.blogs)
         })()
     }, [])
 
