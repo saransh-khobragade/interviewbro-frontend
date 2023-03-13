@@ -16,7 +16,7 @@ export default function Blog() {
     const blogList = useContext(Context);
     blogList.filter(x=>x.blogId===blogId)
     
-    const data = blogList[0].blogContent
+    const data = blogList.length?blogList[0].blogContent:[]
 
     return (
         <div>
