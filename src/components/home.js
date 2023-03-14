@@ -9,7 +9,7 @@ const Home = () => {
         <figure>
           <nav>
             <ul>
-              <li><a href="/"><strong>InterviewBro</strong></a></li>
+              <li><a href="/"><img style={{height:"25px"}} src="favicon/apple-icon-57x57.png"/><strong>InterviewBro</strong></a></li>
             </ul>
             <ul>
               <li><Link to={`questions/javascript`}>Javascript</Link></li>
